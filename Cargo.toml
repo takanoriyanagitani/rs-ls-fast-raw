@@ -6,6 +6,9 @@ edition = "2021"
 [lints.rust]
 unsafe_code = "deny"
 
+[lints.clippy]
+unwrap_used = "forbid"
+
 [profile.release-wasi]
 inherits = "release"
 lto = true
@@ -18,4 +21,13 @@ version = "0.2.169"
 default-features = false
 features = [
   "std",
+]
+
+[target.'cfg(target_os="linux")'.dependencies.linux-raw-sys]
+version = "0.7.0"
+default-features = false
+features = [
+	"errno",
+	"general",
+	"std",
 ]

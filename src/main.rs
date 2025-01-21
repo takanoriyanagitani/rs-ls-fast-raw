@@ -6,9 +6,17 @@ fn sub_darwin() -> Result<(), io::Error> {
     rs_ls_fast_raw::ls::darwin::arg2dir2dirents2stdout()
 }
 
+#[cfg(any(doc, target_os = "linux"))]
+fn sub_linux() -> Result<(), io::Error> {
+    rs_ls_fast_raw::ls::linux_direct::arg2dir2dirents2stdout()
+}
+
 fn sub() -> Result<(), io::Error> {
     #[cfg(any(doc, target_os = "macos"))]
     sub_darwin()?;
+
+    #[cfg(any(doc, target_os = "linux"))]
+    sub_linux()?;
 
     Ok(())
 }
