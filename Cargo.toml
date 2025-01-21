@@ -3,6 +3,20 @@ name = "rs-ls-fast-raw"
 version = "0.1.0"
 edition = "2021"
 
+description = "Faster ls(up to 10x faster on mac, 140% faster on linux)"
+license = "Apache-2.0"
+documentation = "https://docs.rs/crate/rs-ls-fast-raw/latest"
+repository = "https://github.com/takanoriyanagitani/rs-ls-fast-raw"
+keywords = [
+    "ls",
+	"fast",
+	"cli",
+]
+categories = [
+  "command-line-interface",
+  "command-line-utilities",
+]
+
 [lints.rust]
 unsafe_code = "deny"
 
